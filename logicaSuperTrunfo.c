@@ -1,17 +1,27 @@
 #include <stdio.h>
 
 int main() {
+
+    // ==============================
+    // Declaração das variáveis
+    // ==============================
+    // Cada conjunto de variáveis representa uma carta (cidade)
+    
     // Carta 1
     char estado1[20], codigo1[10], cidade1[50];
-    int populacao1, pontos1;
+    int populacao1, pontosTuristicos1;
     float area1, pib1;
 
     // Carta 2
     char estado2[20], codigo2[10], cidade2[50];
-    int populacao2, pontos2;
+    int populacao2, pontosTuristicos2;
     float area2, pib2;
 
-    // Cadastro Carta 1
+    // ==============================
+    // Cadastro da Carta 1
+    // ==============================
+    // Nesta etapa, o usuário insere os dados da primeira cidade
+
     printf("=== Cadastro da Carta 1 ===\n");
 
     printf("Estado: ");
@@ -26,16 +36,20 @@ int main() {
     printf("Populacao: ");
     scanf("%d", &populacao1);
 
-    printf("Area: ");
+    printf("Area (km²): ");
     scanf("%f", &area1);
 
     printf("PIB: ");
     scanf("%f", &pib1);
 
     printf("Numero de pontos turisticos: ");
-    scanf("%d", &pontos1);
+    scanf("%d", &pontosTuristicos1);
 
-    // Cadastro Carta 2
+    // ==============================
+    // Cadastro da Carta 2
+    // ==============================
+    // O mesmo processo é repetido para a segunda cidade
+
     printf("\n=== Cadastro da Carta 2 ===\n");
 
     printf("Estado: ");
@@ -50,25 +64,34 @@ int main() {
     printf("Populacao: ");
     scanf("%d", &populacao2);
 
-    printf("Area: ");
+    printf("Area (km²): ");
     scanf("%f", &area2);
 
     printf("PIB: ");
     scanf("%f", &pib2);
 
     printf("Numero de pontos turisticos: ");
-    scanf("%d", &pontos2);
+    scanf("%d", &pontosTuristicos2);
 
-    // Exibição das cartas
-    printf("\n=== Carta 1 ===\n");
-    printf("Cidade: %s\nPopulacao: %d\nArea: %.2f\nPIB: %.2f\nPontos: %d\n",
-           cidade1, populacao1, area1, pib1, pontos1);
+    // ==============================
+    // Exibição dos dados cadastrados
+    // ==============================
+    // Mostra as informações das duas cartas para conferência
 
-    printf("\n=== Carta 2 ===\n");
-    printf("Cidade: %s\nPopulacao: %d\nArea: %.2f\nPIB: %.2f\nPontos: %d\n",
-           cidade2, populacao2, area2, pib2, pontos2);
+    printf("\n=== Dados da Carta 1 ===\n");
+    printf("Cidade: %s\nPopulacao: %d\nArea: %.2f km²\nPIB: %.2f\nPontos Turisticos: %d\n",
+           cidade1, populacao1, area1, pib1, pontosTuristicos1);
 
-    // Comparação (exemplo: população)
+    printf("\n=== Dados da Carta 2 ===\n");
+    printf("Cidade: %s\nPopulacao: %d\nArea: %.2f km²\nPIB: %.2f\nPontos Turisticos: %d\n",
+           cidade2, populacao2, area2, pib2, pontosTuristicos2);
+
+    // ==============================
+    // Comparação das cartas
+    // ==============================
+    // Neste exemplo, a comparação será feita com base na população
+    // Regra: vence a cidade com maior número de habitantes
+
     printf("\n=== Comparacao por Populacao ===\n");
 
     if (populacao1 > populacao2) {
@@ -76,7 +99,8 @@ int main() {
     } else if (populacao2 > populacao1) {
         printf("Vencedora: Carta 2 (%s)\n", cidade2);
     } else {
-        printf("Empate!\n");
+        // Caso as duas cidades tenham a mesma população
+        printf("Resultado: Empate!\n");
     }
 
     return 0;
